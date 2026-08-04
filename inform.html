@@ -77,11 +77,10 @@
       
             <div class = "purchase-info">
               <input type = "number" min = "0" value = "1" max="8">
-              <button type = "button" class = "btn">
+              <button type = "button" class = "btn" id="payRentButton">
                 Pay rent<i class = "fas fa-shopping-cart"></i>
               </button>
-              <button type = "button" class = "btn"><a href="./index.html" style="text-decoration: none;">Contact Owner</a>
-              </button>
+              <button type="button" class="btn" id="contactOwnerButton">Contact Owner</button>
             </div>
       
             <div class = "social-links">
@@ -103,6 +102,14 @@
           </div>
         </div>
       </div>
-      <script src="./sc.js" ></script>
+      <script src="./sc.js"></script>
+      <script>
+        document.getElementById('payRentButton').addEventListener('click', () => {
+          alert('Payment is not connected in this front-end demo. A payment gateway and backend are required.');
+        });
+        document.getElementById('contactOwnerButton').addEventListener('click', () => {
+          window.location.href = './index.html#contact';
+        });
+      </script>
 </body>
 </html>

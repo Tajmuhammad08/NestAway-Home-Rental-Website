@@ -1,37 +1,44 @@
 # Home Rental Website – NestAway
 
-- Front-End Project | HTML, CSS & JavaScript
-
-- NestAway is a responsive home rental website where users can explore homes and rooms available for rent across various locations. The platform allows users to view property details, check pricing information, and navigate to booking pages through the “Book Now” option.
-
-- Users can also access login/sign-in pages and contact the platform for further details.
+NestAway is a responsive front-end home rental website built with HTML5, CSS3, JavaScript, Bootstrap, and GSAP.
 
 ## Features
 
-- Multi-page responsive website
+- Responsive multi-page layout
+- Property listings with price, beds, size, and location
+- Property search by location, bed/type text, and maximum budget
+- Property details and image gallery
+- Demo sign-up/sign-in using localStorage
+- Mobile navigation
+- Newsletter demo interaction
+- Booking navigation to property details
 
-- Property listing with detailed information
+## Important Demo Note
 
-- Booking navigation through “Book Now”
+This is a front-end portfolio project. Real authentication, payment processing, password reset, email subscription delivery, and database storage require a secure backend and third-party services.
 
-- Login and contact pages
+## Run Locally
 
-- Mobile, tablet, and desktop friendly layout
+1. Download or clone the project.
+2. Open `index.html` in a browser.
+3. For the best local development experience, use a local static server such as VS Code Live Server.
 
-## Technologies Used
+## Deployment
 
-- HTML5
+This static project can be deployed on GitHub Pages, Netlify, or Vercel.
 
-- CSS3
+### Netlify
 
-- Bootstrap
+Drag the project folder into Netlify Drop or connect the GitHub repository. No build command is required.
 
-- JavaScript
+### Vercel
 
-## Project Overview
+Import the GitHub repository as a static site. No framework preset or build command is required.
 
-This project was built to strengthen front-end development skills. It demonstrates structured layout design, responsive web development, and interactive elements using JavaScript
+### GitHub Pages
 
-## How to Run the Project
-1. Clone or download the repository
-2. Open index.html in your browser
+Open the repository Settings, go to Pages, select the deployment branch, and publish from the repository root.
+
+## Entry File
+
+`index.html`

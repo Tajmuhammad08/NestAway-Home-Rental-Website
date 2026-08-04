@@ -63,7 +63,7 @@
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" class="form-control" name="phone" pattern="[0-9]{10}" required>
             </div>
-            <button type="button" id="toggleButton" class="btn btn-primary btn-block">Sign Up</button>
+            <button type="button" id="showSignInButton" class="btn btn-primary btn-block">Already have an account? Sign In</button>
             <button type="submit" class="btn btn-success btn-block">Login</button>
         </form>
 
@@ -78,8 +78,8 @@
                 <input type="password" id="signInPassword" class="form-control" name="signInPassword" required>
             </div>
             <button type="submit" class="btn btn-success btn-block">Sign In</button>       
-             <button type="button" id="toggleButton" class="btn btn-primary btn-block">Create new account</button>
-             <button id="forgotButton" class="btn btn-link btn-block">Forgot Password?</button>
+             <button type="button" id="showSignUpButton" class="btn btn-primary btn-block">Create new account</button>
+             <button type="button" id="forgotButton" class="btn btn-link btn-block">Forgot Password?</button>
 
 
         </form>
@@ -88,24 +88,51 @@
     <!-- Include Bootstrap JS (optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2-/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        const toggleButton = document.getElementById('toggleButton');
         const loginForm = document.getElementById('loginForm');
         const signInForm = document.getElementById('signInForm');
+        const showSignInButton = document.getElementById('showSignInButton');
+        const showSignUpButton = document.getElementById('showSignUpButton');
+        const forgotButton = document.getElementById('forgotButton');
 
-        toggleButton.addEventListener('click', () => {
-            const isLoginFormVisible = loginForm.style.display === 'block';
-            loginForm.style.display = isLoginFormVisible ? 'none' : 'block';
-            signInForm.style.display = isLoginFormVisible ? 'block' : 'none';
-            toggleButton.innerText = isLoginFormVisible ? 'Sign Up' : 'Login';
+        function showForm(formToShow) {
+            loginForm.style.display = formToShow === 'signup' ? 'block' : 'none';
+            signInForm.style.display = formToShow === 'signin' ? 'block' : 'none';
+        }
+
+        showSignInButton.addEventListener('click', () => showForm('signin'));
+        showSignUpButton.addEventListener('click', () => showForm('signup'));
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const user = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim()
+            };
+            localStorage.setItem('nestawayDemoUser', JSON.stringify(user));
+            alert('Demo account created successfully. You can now sign in.');
+            document.getElementById('signInEmail').value = user.email;
+            showForm('signin');
         });
 
-        const forgotButton = document.getElementById('forgotButton');
+        signInForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const savedUser = JSON.parse(localStorage.getItem('nestawayDemoUser') || 'null');
+            const email = document.getElementById('signInEmail').value.trim();
+
+            if (savedUser && savedUser.email.toLowerCase() === email.toLowerCase()) {
+                alert(`Welcome back, ${savedUser.name}!`);
+                window.location.href = './index.html';
+            } else {
+                alert('Demo account not found. Please create an account first.');
+            }
+        });
+
         forgotButton.addEventListener('click', () => {
-            // Handle forgot password logic (e.g., show a modal or redirect to a reset password page)
-            alert('Forgot Password clicked!');
+            alert('This is a front-end demo. Password reset requires a backend authentication service.');
         });
     </script>
     

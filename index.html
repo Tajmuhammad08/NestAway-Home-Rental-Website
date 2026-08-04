@@ -9,7 +9,7 @@
     <link rel="icon" href="./images/NESTAWAY.png">
     <!-- custom css link  -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"><link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 	
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./media.css">
@@ -28,9 +28,9 @@
                 <li><a href="#product" class="list-item">Property</a></li>
                 <li><a href="#product" class="list-item">Service</a></li>
                 <li><a href="#product" class="list-item">Product</a></li>
-                <li><a href="#aboutus  " class="list-item">About</a></li>
-                <li><a href=" login.html" class="list-item login ">Login</a>
-                <li><a href=" #contact" class="list-item contact ">Contact</a>
+                <li><a href="#aboutus" class="list-item">About</a></li>
+                <li><a href="./login.html" class="list-item login ">Login</a>
+                <li><a href="#contact" class="list-item contact ">Contact</a>
                 </li>
             </ul>
 
@@ -60,18 +60,18 @@
     <!-- header  -->
 
     <!-- search box -->
-    <form>
+    <form id="propertySearchForm">
         <div class="container">
             <div class="input">
-                <input type="text" placeholder="loaction">
+                <input id="locationSearch" type="text" placeholder="location" aria-label="Search by location">
                 <img src="./images/location.svg" alt="">
             </div>
             <div class="input">
-                <input type="text" placeholder="type">
+                <input id="typeSearch" type="text" placeholder="type or beds" aria-label="Search by property type or beds">
                 <img src="./images/home1.svg" alt="" id="">
             </div>
             <div class="input">
-                <input type="text" placeholder="budget">
+                <input id="budgetSearch" type="number" min="0" placeholder="max budget" aria-label="Maximum budget">
                 <img src="./images/money.svg" alt="">
             </div>
             <div class="input search">
@@ -89,7 +89,7 @@
                 our Popular Residence
             </h2>
 
-            <a href="" class="product-btn">
+            <a href="#product" class="product-btn">
                 Explore All
                 <img src="./images/arrow.svg" alt="">
             </a>
@@ -119,7 +119,7 @@
                     </div>
                     <div class="price">
                         <p>Rs.10000</p>
-                        <a href="./work.html" class="booking-btn">Book Now</a>
+                        <a href="./inform.html" class="booking-btn">Book Now</a>
                     </div>
 
                 </div>
@@ -148,7 +148,7 @@
                     </div>
                     <div class="price">
                         <p>Rs.12000</p>
-                        <a href="./work.html" class="booking-btn">Book Now</a>
+                        <a href="./inform.html" class="booking-btn">Book Now</a>
                     </div>
 
                 </div>
@@ -178,7 +178,7 @@
                     </div>
                     <div class="price">
                         <p>Rs.8000</p>
-                        <a href="./work.html" class="booking-btn">Book Now</a>
+                        <a href="./inform.html" class="booking-btn">Book Now</a>
                     </div>
 
                 </div>
@@ -236,7 +236,7 @@
                     </div>
                     <div class="price">
                         <p>Rs.3000</p>
-                        <a href="./work.html" class="booking-btn">Book Now</a>
+                        <a href="./inform.html" class="booking-btn">Book Now</a>
                     </div>
 
                 </div>
@@ -265,7 +265,7 @@
                     </div>
                     <div class="price">
                         <p>Rs.5750</p>
-                        <a href="./work.html" class="booking-btn">Book Now</a>
+                        <a href="./inform.html" class="booking-btn">Book Now</a>
                     </div>
 
                 </div>
@@ -294,7 +294,7 @@
                     </div>
                     <div class="price">
                         <p>Rs.5000</p>
-                        <a href="./work.html" class="booking-btn">Book Now</a>
+                        <a href="./inform.html" class="booking-btn">Book Now</a>
                     </div>
 
                 </div>
@@ -323,7 +323,7 @@
                     </div>
                     <div class="price">
                         <p>Rs.6000</p>
-                        <a href="./work.html" class="booking-btn">Book Now</a>
+                        <a href="./inform.html" class="booking-btn">Book Now</a>
                     </div>
 
                 </div>
@@ -352,7 +352,7 @@
                     </div>
                     <div class="price">
                         <p>Rs.4500</p>
-                        <a href="./work.html" class="booking-btn">Book Now</a>
+                        <a href="./inform.html" class="booking-btn">Book Now</a>
                     </div>
 
                 </div>
@@ -362,7 +362,7 @@
         
     </section>
 
-	<footer class="footer-section">
+	<footer class="footer-section" id="contact">
         <div class="container">
             <div class="footer-cta pt-5 pb-5">
                 <div class="row">
@@ -420,15 +420,15 @@
                                 <h3>Useful Links</h3>
                             </div>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">services</a></li>
-                                <li><a href="#">portfolio</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Our Services</a></li>
+                                <li><a href="./index.html">Home</a></li>
+                                <li><a href="#aboutus">About</a></li>
+                                <li><a href="#product">Services</a></li>
+                                <li><a href="#product">Properties</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="#aboutus">About us</a></li>
+                                <li><a href="#product">Our Services</a></li>
                                 <li><a href="#">Expert Team</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#contact">Contact us</a></li>
                                 <li><a href="#">Latest News</a></li>
                             </ul>
                         </div>
@@ -442,8 +442,8 @@
                                 <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
                             </div>
                             <div class="subscribe-form">
-                                <form action="#">
-                                    <input type="text" placeholder="Email Address">
+                                <form id="subscribeForm">
+                                    <input id="subscribeEmail" type="email" placeholder="Email Address" required>
                                     <button><i class="fab fa-telegram-plane"></i></button>
                                 </form>
                             </div>
@@ -457,17 +457,17 @@
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                         <div class="copyright-text">
-                            <p>Copyright &copy; 2024, All Right Reserved to <a href="https://github.com/Tajmuhammad08">Taj Muhammad Ansari</a></p>
+                            <p>Copyright &copy; 2026, All Right Reserved to <a href="https://github.com/Tajmuhammad08">Taj Muhammad Ansari</a></p>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="#">Home</a></li>
+                                <li><a href="./index.html">Home</a></li>
                                 <li><a href="#">Terms</a></li>
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Policy</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="#contact">Contact</a></li>
                             </ul>
                         </div>
                     </div>
