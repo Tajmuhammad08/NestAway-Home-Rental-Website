@@ -1,4 +1,4 @@
-# Home Rental Website – NestAway
+# NestAway - Home Rental Website
 
 NestAway is a responsive front-end home rental website built with HTML5, CSS3, JavaScript, Bootstrap, and GSAP.
 
