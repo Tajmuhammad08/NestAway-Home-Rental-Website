@@ -4,11 +4,35 @@ const line3 = document.querySelector('.line3');
 const sidebar = document.querySelector('.nav-list');
 
 const showMenu = () => {
+    if (!sidebar || !line1 || !line2 || !line3) return;
     line1.classList.toggle('active');
     line2.classList.toggle('active');
     line3.classList.toggle('active');
     sidebar.classList.toggle('active');
 };
+
+// Attach a stable property ID to each listing so booking always opens that listing.
+document.querySelectorAll('#product .product-card').forEach((card, index) => {
+    const property = window.properties && window.properties[index];
+    if (!property) return;
+    card.dataset.propertyId = property.id;
+    const image = card.querySelector('.product-img');
+    if (image) {
+        image.src = `./images/${property.image}`;
+        image.alt = `${property.beds} bedroom rental in ${property.location}`;
+        image.removeAttribute('width');
+    }
+    const locationLabel = card.querySelector('.card-info-content:first-child p');
+    const facts = card.querySelectorAll('.card-info-content .content p');
+    const priceLabel = card.querySelector('.price p');
+    if (locationLabel) locationLabel.textContent = property.location;
+    if (facts[0]) facts[0].textContent = `${property.beds} Bed`;
+    if (facts[1]) facts[1].textContent = property.size;
+    if (facts[2]) facts[2].textContent = property.area;
+    if (priceLabel) priceLabel.textContent = `Rs.${property.price.toLocaleString('en-IN')}`;
+    const bookingLink = card.querySelector('.booking-btn');
+    if (bookingLink) bookingLink.href = `./inform.html?id=${encodeURIComponent(property.id)}`;
+});
 
 document.querySelectorAll('.nav-list a').forEach((link) => {
     link.addEventListener('click', () => {
@@ -26,7 +50,8 @@ if (searchForm) {
 
         const location = document.getElementById('locationSearch').value.trim().toLowerCase();
         const type = document.getElementById('typeSearch').value.trim().toLowerCase();
-        const budget = Number(document.getElementById('budgetSearch').value) || Infinity;
+        const budgetValue = document.getElementById('budgetSearch').value;
+        const budget = budgetValue === '' ? Infinity : Number(budgetValue);
         const cards = document.querySelectorAll('.product-card');
         let visibleCount = 0;
 

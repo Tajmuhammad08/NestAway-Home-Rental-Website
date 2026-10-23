@@ -5,13 +5,13 @@ NestAway is a responsive front-end home rental website built with HTML5, CSS3, J
 ## Features
 
 - Responsive multi-page layout
-- Property listings with price, beds, size, and location
+- Property listings with shared property data for images, price, beds, size, and location
 - Property search by location, bed/type text, and maximum budget
 - Property details and image gallery
 - Demo sign-up/sign-in using localStorage
 - Mobile navigation
 - Newsletter demo interaction
-- Booking navigation to property details
+- Booking navigation to property details by unique property ID
 
 ## Important Demo Note
 

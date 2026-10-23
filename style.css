@@ -7,6 +7,7 @@
 */
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 /*
@@ -139,7 +140,7 @@ background-color: red;
 /* navbar style  */
 
 .header {
-    width: 100vw;
+    width: 100%;
     max-width: 1980px;
     background-image: url(./images/moroom.jpg);
     height: 100vh;
@@ -172,7 +173,7 @@ background-color: red;
 }
 
 .header-headline {
-    font-size: 6rem;
+    font-size: clamp(2.5rem, 7vw, 6rem);
     text-align: center;
     font-weight: 900;
     line-height: 110%;
@@ -331,6 +332,8 @@ form .container {
 
 .product-img {
     flex-basis: 100%;
+    width: 100%;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     transition:  300ms ease;
 }
